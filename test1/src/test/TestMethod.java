@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class TestMethod {
     /*
     1、有一家超市，出售苹果和草莓。其中苹果 8 元/斤，草莓 13 元/斤。
@@ -32,8 +34,10 @@ public class TestMethod {
     public double test4(int x, int y, int z) {
         double price = test3(x, y, z);
         if (price >= 100) {
-            int a = (int) Math.floor(price / 100);
-            price = price - 10 * a;
+            double a =Math.floor(price / 100);
+            BigDecimal b1 = new BigDecimal(Double.toString(a));
+            BigDecimal b2 = new BigDecimal(Double.toString(price));
+            price = b2.subtract(b1.multiply(new BigDecimal(Double.toString(10)))).doubleValue();;
         }
 
         return price;
