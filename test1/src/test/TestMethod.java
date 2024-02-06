@@ -39,7 +39,6 @@ public class TestMethod {
             BigDecimal b2 = new BigDecimal(Double.toString(price));
             price = b2.subtract(b1.multiply(new BigDecimal(Double.toString(10)))).doubleValue();;
         }
-
         return price;
     }
 }
